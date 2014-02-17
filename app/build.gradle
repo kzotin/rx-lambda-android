@@ -1,0 +1,39 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:0.8.+'
+        classpath 'me.tatarka:gradle-retrolambda:1.1.1'
+    }
+}
+
+apply plugin: 'android'
+apply plugin: 'retrolambda'
+
+android {
+    compileSdkVersion 19
+    buildToolsVersion "19.0.1"
+
+    defaultConfig {
+        minSdkVersion 8
+        targetSdkVersion 19
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'com.squareup.okhttp:okhttp:1.3.0'
+    compile 'com.squareup.retrofit:retrofit:1.4.1'
+
+    compile 'com.netflix.rxjava:rxjava-core:0.16.+'
+    compile 'com.netflix.rxjava:rxjava-android:0.16.+'
+}
